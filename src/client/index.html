@@ -6,11 +6,13 @@
 
     <link rel="stylesheet" href="../../src/client/style.css">
 
-    <script src="https://simplewebrtc.com/latest-v2.js"></script>
-    <script src="../../dist/client/script.js"></script>
 </head>
-<body>
-<video id="localVideo"></video>
-<div id="remoteVideos"></div>
+<body onload="my_init()">
+<video id="self" autoplay> </video>
+<video id="caller"></video>
+
+
+<script src="../static/js/jquery.min.js"></script>
+<script src="../../dist/client/script.js"></script>
 </body>
 </html>
