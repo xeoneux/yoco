@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Yoco</title>
-    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
-    <script src="http://localhost:8080/easyrtc/easyrtc.js"></script>
+
+    <link rel="stylesheet" href="../../src/client/style.css">
+
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
     <script src="../../dist/client/script.js"></script>
 </head>
 <body>
-Hello World!
+<video id="localVideo"></video>
+<div id="remoteVideos"></div>
 </body>
 </html>
