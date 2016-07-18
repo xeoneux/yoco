@@ -3,6 +3,7 @@
   "dependencies": {},
   "globalDependencies": {
     "electron": "registry:env/electron#0.37.6+20160416165306",
-    "node": "registry:env/node#6.0.0+20160622202520"
+    "node": "registry:env/node#6.0.0+20160622202520",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20160317120654"
   }
 }
