@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Video Conference</title>
+        
+        
+        <style>
+         #peer {
+	        width: 60%;
+	        height: 80%;
+	     }
+
+	   	#self {
+	        width: 20%;
+	        height: 20%;
+	        position: absolute;
+	    }
+        </style>
+    </head>
+    <body>
+    	<video id="self" autoplay></video>
+        <video id="peer"></video>
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+  </html>

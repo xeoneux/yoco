@@ -1,0 +1,19 @@
+{
+  "name": "yoco_server",
+  "version": "0.1.6",
+  "author": "Shrey Malhotra",
+  "description": "YoCo server",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "easyrtc": "^1.0.15",
+    "express": "^4.10.7",
+    "serve-static": "^1.8.0",
+    "socket.io": "^1.3.7"
+  },
+  "devDependencies": {
+    "bower": "^1.7.9"
+  }
+}
