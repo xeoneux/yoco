@@ -39,7 +39,7 @@ function createWindow() {
         transparent: true,
         width: mainWindowTransform.width,
         height: mainWindowTransform.height,
-        alwaysOnTop: false,
+        alwaysOnTop: true,
         movable: true,
         skipTaskbar: false,
         background: '#00000033'
@@ -53,7 +53,7 @@ function createWindow() {
     mainWindowTransform.posX = pos[0];
     mainWindowTransform.posY = pos[1];
 
-    mainWindow.loadURL(`file://${__dirname}/../src/client/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
 
     mainWindow.webContents.openDevTools();
 
@@ -62,6 +62,7 @@ function createWindow() {
     });
 }
 
+app.commandLine.appendSwitch ('ignore-certificate-errors', 'true');
 app.on('ready', createWindow);
 
 
