@@ -11,7 +11,10 @@ var config = {
         '@angular': [
             'rxjs',
             'reflect-metadata',
-            'zone.js'
+            'zone.js',
+            '@angular/core',
+            '@angular/router',
+            '@angular/http'
         ],
         'common': ['es6-shim'],
         'app': './src/app/main.ts',

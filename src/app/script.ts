@@ -3,7 +3,7 @@ let io = require('socket.io-client');
 
 const origin = 'wss://192.168.1.13:8443';
 export let selfEasyrtcid = '';
-export let socket = io.connect(origin);
+let socket = io.connect(origin);
 
 export function yocoInit() {
     if (easyrtc !== undefined) {
@@ -18,20 +18,20 @@ export function yocoInit() {
     }
 }
 
-export let connectSuccess = function (easyrtid) {
+let connectSuccess = function (easyrtid) {
     selfEasyrtcid = easyrtid;
     console.log('Connect Successful. My id is ' + selfEasyrtcid);
     let room = 'my-room';
     easyrtc.joinRoom(room, null, joinSuccess, failureCallback);
 };
 
-export let failureCallback = function (errorCode, errorMsg) {
+let failureCallback = function (errorCode, errorMsg) {
     // log error
     console.log(errorCode);
     console.log(errorMsg);
 };
 
-export let joinSuccess = function(roomName) { // listen for peers joining the room
+let joinSuccess = function(roomName) { // listen for peers joining the room
     setTimeout(function() {
         console.log('successfully joined room: ' + roomName);
         let peers = easyrtc.getRoomOccupantsAsArray(roomName) || []; // get list of client connected to room
@@ -50,7 +50,8 @@ export let joinSuccess = function(roomName) { // listen for peers joining the ro
     }, 100);
 };
 
-export function roomListener (roomName, otherPeers) {
+function roomListener (roomName, otherPeers) {
     console.log(roomName, otherPeers);
+    console.log('You are connected to ' + easyrtc.getConnectionCount() + ' people.');
 }
 
