@@ -1,5 +1,5 @@
 .idea
 
-dist
+build
 typings
 node_modules

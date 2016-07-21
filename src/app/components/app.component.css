@@ -1,0 +1,23 @@
+#self {
+    height:30%;
+    position:absolute;
+    right:20px;
+    bottom: 20px;
+    border:1px solid rgba(0,0,0,0.8);
+}
+
+#caller {
+    width:100%;
+    height:100%;
+    margin:0;
+    background:rgba(0,0,0,1);
+}
+
+#easyrtcErrorDialog{
+    position: absolute;
+    top:0;
+    margin:10px;
+    background:#fff;
+    box-shadow:2px 2px 0px 0px #444;
+    padding:10px;
+}
