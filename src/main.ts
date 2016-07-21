@@ -1,5 +1,5 @@
-const electron = require("electron");
-const Positioner = require("electron-positioner");
+const electron = require('electron');
+const Positioner = require('electron-positioner');
 
 const {app, Menu, Tray} = electron;
 const {BrowserWindow} = electron;
@@ -15,7 +15,7 @@ const mainWindowTransform = {
     posY: 0,
     offsetX: -65,
     offsetY: -20
-}
+};
 
 function createWindow() {
 
@@ -42,12 +42,12 @@ function createWindow() {
         alwaysOnTop: false,
         movable: true,
         skipTaskbar: false,
-        background: "#00000033"
+        background: '#00000033'
     };
     mainWindow = new BrowserWindow(mainWindowOptions);
 
     const positioner = new Positioner(mainWindow);
-    positioner.move("bottomRight");
+    positioner.move('bottomRight');
 
     let pos = mainWindow.getPosition();
     mainWindowTransform.posX = pos[0];
@@ -57,21 +57,21 @@ function createWindow() {
 
     mainWindow.webContents.openDevTools();
 
-    mainWindow.on("closed", function () {
+    mainWindow.on('closed', function () {
         mainWindow = null;
     });
 }
 
-app.on("ready", createWindow);
+app.on('ready', createWindow);
 
 
-app.on("window-all-closed", function () {
-    if (process.platform !== "darwin") {
+app.on('window-all-closed', function () {
+    if (process.platform !== 'darwin') {
         app.quit();
     }
 });
 
-app.on("activate", function () {
+app.on('activate', function () {
     if (mainWindow === null) {
         createWindow();
     }
