@@ -12,12 +12,15 @@
     "exclude": [
         "node_modules",
         "releases",
-        "typings/main.d.ts",
-        "typings/main"
+        "typings/index.d.ts",
+        "typings/index",
+        "server",
+        "typings/globals",
+        "typings/modules"
     ],
     "filesGlob": [
-        "./src/customDefinitions.d.ts",
-        "./src/app/**/*.ts",
+        "./client/customDefinitions.d.ts",
+        "./client/app/**/*.ts",
         "!./node_modules/**/*.ts",
         "typings/browser.d.ts"
     ],
@@ -25,10 +28,8 @@
         "resolveGlobs": true,
         "forkChecker": true
     },
-    "compileOnSave": false,
+    "private": true,
     "buildOnSave": false,
-    "atom": { "rewriteTsconfig": false },
-    "ambientDependencies": {
-        "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd"
-    }
+    "compileOnSave": false,
+    "atom": { "rewriteTsconfig": false }
 }

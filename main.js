@@ -8,6 +8,8 @@ const {ipcMain} = electron;
 let parentWindow;
 let mainWindow;
 
+const server = require('./server/bin/www').server;
+
 const mainWindowTransform = {
     width: 640,
     height: 480,
@@ -53,13 +55,18 @@ function createWindow() {
     mainWindowTransform.posX = pos[0];
     mainWindowTransform.posY = pos[1];
 
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    let port = server.address().port;
+
+    //Load via express
+    mainWindow.loadURL("http://localhost:"+port);
+    //mainWindow.loadURL(`file://${__dirname}/index.html`)
 
     mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
+
 }
 
 app.commandLine.appendSwitch ('ignore-certificate-errors', 'true');

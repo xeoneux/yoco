@@ -1,3 +1,5 @@
+/// <reference path="../_all.d.ts" />
+
 declare var easyrtc: any;
 let io = require('socket.io-client');
 
