@@ -17,11 +17,11 @@ var config = {
             '@angular/http'
         ],
         'common': ['es6-shim'],
-        'app': './src/app/main.ts',
+        'client/app': './client/app/main.ts'
     },
 
     output: {
-        path: __dirname + '/build/',
+        path: __dirname + '/build',
         publicPath: 'build/',
         filename: '[name].js',
         sourceMapFilename: '[name].js.map',
@@ -29,6 +29,7 @@ var config = {
     },
 
     resolve: {
+        root: __dirname,
         extensions: ['','.ts','.js','.json', '.css', '.html']
     },
 
@@ -37,7 +38,7 @@ var config = {
             {
                 test: /\.ts$/,
                 loader: 'ts',
-                exclude: [ /node_modules/, /releases/ ]
+                exclude: [ "node_modules", /releases/ ]
             },
             {
                 test: /\.json$/,
